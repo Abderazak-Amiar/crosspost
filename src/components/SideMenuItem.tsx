@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-function SideMenuItem(props: sideMenuItemPropsType) {
+function SideMenuItem(props: Readonly<sideMenuItemPropsType>) {
   const { item } = props;
   return (
     <BoxLinksContainer>
@@ -23,7 +23,7 @@ function SideMenuItem(props: sideMenuItemPropsType) {
         </Link>
       </Box>
       <Box>
-        <Link href="/">
+        <Link href={`/${item.link}`}>
           <TypographyMenuItems variant="body1">{item.text}</TypographyMenuItems>
         </Link>
       </Box>
