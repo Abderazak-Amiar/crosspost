@@ -36,6 +36,19 @@ export const GridHomeContainer = styled(Grid)(() => ({
   flexDirection: 'column',
   height: '100vh',
 }));
+export const GridHomeContent = styled(Grid)(() => ({
+  flexDirection: 'column',
+  width: '80% !important',
+  margin: 'auto',
+  height: '100vh',
+}));
+export const GridHeaderContainer = styled(Grid)(() => ({
+  flexDirection: 'column',
+}));
+export const GridHeaderPicture = styled(Grid)(() => ({
+  display: 'flex',
+  justifyContent: 'end',
+}));
 
 export const TypographyPoppins = styled(Typography)(() => ({
   fontFamily: poppins.style.fontFamily,
