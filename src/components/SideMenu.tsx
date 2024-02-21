@@ -31,7 +31,9 @@ function SideMenu() {
       <Grid item>
         <GridMenuContainer container>
           <Grid item md={6}>
-            <SideMenuItem item={{ icon: 'settings', text: 'Settings' }} />
+            <SideMenuItem
+              item={{ icon: 'settings', text: 'Settings', link: 'settings' }}
+            />
           </Grid>
         </GridMenuContainer>
       </Grid>
