@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import Home from '@/components/Home';
 export const metadata: Metadata = {
   title: 'Crosspost',
   description: 'This is a crosspost app !',
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        <AppRouterCacheProvider>
+          <Home>{children}</Home>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
