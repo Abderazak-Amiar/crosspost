@@ -1,15 +1,12 @@
 import { GridContentContainer } from '@/styled-components/styled';
 import { Grid } from '@mui/material';
+import TabsPanel from './TabsPanel';
 function Content() {
   return (
     <GridContentContainer container>
-      <Grid item>Profile picture</Grid>
-      <Grid item>bradcrumb</Grid>
-      <Grid item>content menu</Grid>
-      <Grid item>Post description</Grid>
-      <Grid item>Image</Grid>
-      <Grid item>Slider</Grid>
-      <Grid item>Buttons</Grid>
+      <Grid item>
+        <TabsPanel />
+      </Grid>
     </GridContentContainer>
   );
 }

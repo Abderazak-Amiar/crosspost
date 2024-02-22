@@ -1,3 +1,3 @@
 export type sideMenuItemPropsType = {
-  item: { icon: string; text: string };
+  item: { icon: string; text: string; link: string };
 };
