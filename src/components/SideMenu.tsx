@@ -23,7 +23,7 @@ function SideMenu() {
         <GridMenuContainer container>
           <Grid item md={6}>
             {menu_items.map((item, index) => (
-              <SideMenuItem key={`item_${index}`} item={item} />
+              <SideMenuItem key={item.link} item={item} />
             ))}
           </Grid>
         </GridMenuContainer>
