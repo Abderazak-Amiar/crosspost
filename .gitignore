@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#dev
+/dev_utils
+/dev_utils/
+/crosspost_build
