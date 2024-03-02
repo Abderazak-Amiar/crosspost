@@ -1,8 +1,13 @@
+'use client';
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { Grid } from '@mui/material';
+import Cover from './Cover/Cover';
+import { useGenerationStore } from '@/store/Zustand';
+import { useEffect, useState } from 'react';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -12,21 +17,16 @@ interface TabPanelProps {
 
 function CustomTabPanel(props: Readonly<TabPanelProps>) {
   const { children, value, index, ...other } = props;
-
   return (
-    <div
+    <Box
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </Box>
   );
 }
 
@@ -45,27 +45,26 @@ export default function TabsPanel() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Grid>
+      <Grid item md={4} sx={{ margin: 'auto' }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          variant="fullWidth"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Cover" {...a11yProps(0)} />
+          <Tab label="Profile grid" {...a11yProps(1)} />
         </Tabs>
-      </Box>
-      <CustomTabPanel value={value} index={0}>
-        Item One
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel>
-    </Box>
+      </Grid>
+      <Grid item>
+        <CustomTabPanel value={value} index={0}>
+          <Cover />
+        </CustomTabPanel>
+        <CustomTabPanel value={value} index={1}>
+          <Typography variant="body1">Profile grid</Typography>
+        </CustomTabPanel>
+      </Grid>
+    </Grid>
   );
 }
