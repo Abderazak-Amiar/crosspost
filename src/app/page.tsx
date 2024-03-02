@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material';
+
 export default function Home() {
-  return <></>;
+  return <Typography variant="h1">Welcome to CrossPost</Typography>;
 }
