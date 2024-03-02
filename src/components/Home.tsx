@@ -10,7 +10,7 @@ function Home({
   children: React.ReactNode;
 }>) {
   return (
-    <Grid container>
+    <Grid container id="home_page">
       <Grid item md={3}>
         <SideMenu />
       </Grid>

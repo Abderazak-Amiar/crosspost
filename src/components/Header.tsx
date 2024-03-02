@@ -2,22 +2,36 @@
 import {
   GridHeaderContainer,
   GridHeaderPicture,
+  HeaderGridRoute,
 } from '@/styled-components/styled';
-import { Grid, Typography } from '@mui/material';
+import { Grid, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import FaceIcon from '@mui/icons-material/Face';
+import Link from 'next/link';
 function Header() {
   const currentRoute = usePathname();
   return (
     <GridHeaderContainer container spacing={0}>
       <GridHeaderPicture item>
-        <Image src="images/logo.svg" width={43} height={43} alt="Logo" />
+        <IconButton
+          sx={{
+            color: ' #00000050',
+            margin: '8px',
+            '&:hover': { background: '#ffffff00' },
+          }}
+        >
+          <FaceIcon fontSize="large" />
+          <KeyboardArrowDownIcon />
+        </IconButton>
       </GridHeaderPicture>
-      <Grid item>
-        <Typography variant="h4">{currentRoute}</Typography>
-      </Grid>
+      <HeaderGridRoute item>
+        <Link href="/">{currentRoute !== '/' && <ArrowBackIosIcon />}</Link>
+        <Typography variant="h4">{currentRoute.replace('/', '')}</Typography>
+      </HeaderGridRoute>
     </GridHeaderContainer>
   );
 }
