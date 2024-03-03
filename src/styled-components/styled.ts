@@ -1,13 +1,5 @@
 'use client';
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  Popover,
-  Typography,
-  styled,
-} from '@mui/material';
+import { Box, Button, Grid, Popover, Typography, styled } from '@mui/material';
 import { poppins, sfPro_regular } from './fonts';
 
 export const GridSideMenuContainer = styled(Grid)(() => ({
@@ -109,7 +101,7 @@ export const HeaderGridRoute = styled(Grid)(() => ({
   alignItems: 'center',
 }));
 export const ImageCoverGrid = styled(Grid)(() => ({
-  background: 'blue',
+  height: '135px',
   borderRadius: '18px',
   display: 'flex',
   justifyContent: 'center',

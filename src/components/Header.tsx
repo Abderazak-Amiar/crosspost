@@ -4,8 +4,7 @@ import {
   GridHeaderPicture,
   HeaderGridRoute,
 } from '@/styled-components/styled';
-import { Grid, IconButton, Typography } from '@mui/material';
-import Image from 'next/image';
+import { IconButton, Typography } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -21,7 +20,7 @@ function Header() {
           sx={{
             color: ' #00000050',
             margin: '8px',
-            '&:hover': { background: '#ffffff00' },
+            '&:hover': { background: 'transparent' },
           }}
         >
           <FaceIcon fontSize="large" />

@@ -1,16 +1,14 @@
 'use client';
-import * as React from 'react';
+import { ReactNode, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import Cover from './Cover/Cover';
-import { useGenerationStore } from '@/store/Zustand';
-import { useEffect, useState } from 'react';
 
 interface TabPanelProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   index: number;
   value: number;
 }
@@ -38,7 +36,7 @@ function a11yProps(index: number) {
 }
 
 export default function TabsPanel() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
