@@ -3,23 +3,23 @@ export function b642Blob(b64Data: any, contentType: any, sliceSize: any) {
   contentType = contentType || '';
   sliceSize = sliceSize || 512;
 
-  var byteCharacters = window.atob(b64Data.split(',')[1]);
-  var byteArrays = [];
+  const byteCharacters = window.atob(b64Data.split(',')[1]);
+  const byteArrays = [];
 
-  for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-    var slice = byteCharacters.slice(offset, offset + sliceSize);
+  for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-    var byteNumbers = new Array(slice.length);
-    for (var i = 0; i < slice.length; i++) {
+    let byteNumbers = new Array(slice.length);
+    for (let i = 0; i < slice.length; i++) {
       byteNumbers[i] = slice.charCodeAt(i);
     }
 
-    var byteArray = new Uint8Array(byteNumbers);
+    const byteArray = new Uint8Array(byteNumbers);
 
     byteArrays.push(byteArray);
   }
 
-  var blob = new Blob(byteArrays, { type: contentType });
+  const blob = new Blob(byteArrays, { type: contentType });
   return blob;
 }
 

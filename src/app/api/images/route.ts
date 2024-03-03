@@ -1,6 +1,5 @@
 import { fileToBuffer } from '@/utils/functions';
-import prisma from '@/lib/db';
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { NextRequest, NextResponse } from 'next/server';
 import { join } from 'path';
 import { addImage, deleteImage, getImages } from '@/actions/actions';

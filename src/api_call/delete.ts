@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const deleteImage = async (id: number) => {
   const response = await fetch('/api/images', {
     method: 'DELETE',
