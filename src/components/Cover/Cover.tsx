@@ -1,6 +1,6 @@
 'use client';
-import { Box, Grid, IconButton, Popover } from '@mui/material';
-import React, { Fragment, SyntheticEvent, useEffect, useState } from 'react';
+import { Box, Grid } from '@mui/material';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 import CoverTitle from './CoverTitle';
 import TakePhoto from '../TakePhoto';
 import {
@@ -9,7 +9,6 @@ import {
   ButtonUploadDisabled,
   ButtonsGrid,
   CoverGrid,
-  CustomIconButton,
   CustomPopover,
   ImageCoverGrid,
   ImagesListBox,
@@ -19,10 +18,8 @@ import {
 } from '@/styled-components/styled';
 import CoverImage from './CoverImage';
 import { useGenerationStore } from '@/store/Zustand';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ImageIcon from '@mui/icons-material/Image';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { getImages } from '@/api_call/get';
 import { crosspostImageT, crosspostImagesT } from '@/lib/types';
 import Image from 'next/image';
@@ -112,30 +109,28 @@ function Cover() {
         )}
       </SelectedImageGrid>
       <ImageCoverGrid item>
-        {images &&
-          images.map((img, index) => (
-            <ImagesListBox key={img.id}>
-              <DeleteIcon
-                onClick={() => deleteImageById(img.id)}
-                sx={DeleteIconStyle}
+        {images?.map((img, index) => (
+          <ImagesListBox key={img.id}>
+            <DeleteIcon
+              onClick={() => deleteImageById(img.id)}
+              sx={DeleteIconStyle}
+            />
+            <SelectImageBox onClick={() => selectImage(img)}>
+              <CoverImage
+                src={`/images/${img.src}`}
+                alt="Cover Image"
+                width={90}
+                height={160}
+                borderRaduisClass={
+                  setSpecialStyle(index, index === images?.length - 1, false)!
+                }
+                layerBoxClass={
+                  setSpecialStyle(index, index === images?.length - 1, true)!
+                }
               />
-              <SelectImageBox onClick={() => selectImage(img)}>
-                <CoverImage
-                  key={index}
-                  src={`/images/${img.src}`}
-                  alt="Cover Image"
-                  width={90}
-                  height={160}
-                  borderRaduisClass={
-                    setSpecialStyle(index, index === images.length - 1, false)!
-                  }
-                  layerBoxClass={
-                    setSpecialStyle(index, index === images.length - 1, true)!
-                  }
-                />
-              </SelectImageBox>
-            </ImagesListBox>
-          ))}
+            </SelectImageBox>
+          </ImagesListBox>
+        ))}
       </ImageCoverGrid>
       <Grid item>
         {takePhoto && (
@@ -156,7 +151,7 @@ function Cover() {
         )}
       </Grid>
       <ButtonsGrid item>
-        {images && images?.length < 6 ? (
+        {images?.length! < 6 ? (
           <ButtonUpload onClick={upload}>Upload</ButtonUpload>
         ) : (
           <ButtonUploadDisabled>Upload</ButtonUploadDisabled>

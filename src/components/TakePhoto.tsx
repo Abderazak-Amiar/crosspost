@@ -4,7 +4,6 @@ import Webcam from 'react-webcam';
 import Image from 'next/image';
 import { Button } from '@mui/material';
 import { b642Blob } from '@/utils/functions';
-import axios from 'axios';
 import { uploadImage } from '@/api_call/post';
 import { useGenerationStore } from '@/store/Zustand';
 

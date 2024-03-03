@@ -1,10 +1,5 @@
 'use client';
-import {
-  CoverImageComponent,
-  ImageCoverGrid,
-  LayerBox,
-} from '@/styled-components/styled';
-import { Box, Grid } from '@mui/material';
+import { CoverImageComponent, LayerBox } from '@/styled-components/styled';
 import Image from 'next/image';
 import React from 'react';
 type coverImagePropsType = {
@@ -15,7 +10,7 @@ type coverImagePropsType = {
   borderRaduisClass: string;
   layerBoxClass: string;
 };
-function CoverImage(props: coverImagePropsType) {
+function CoverImage(props: Readonly<coverImagePropsType>) {
   const { src, alt, width, height, borderRaduisClass, layerBoxClass } = props;
   return (
     <CoverImageComponent item>
