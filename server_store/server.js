@@ -13,3 +13,7 @@ app.route('/').get((req, res) => {
 app.route('/photos').get((req, res) => {
   res.send('Welcome to photos route on Server Store ⚡️');
 });
+
+app.route('/prisma').get((req, res) => {
+  res.send('Welcome to Prisma DB UI ⚡️');
+});
