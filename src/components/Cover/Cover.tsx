@@ -25,6 +25,7 @@ import { crosspostImageT, crosspostImagesT } from '@/lib/types';
 import Image from 'next/image';
 import { deleteImage } from '@/api_call/delete';
 import { DeleteIconStyle, ImageIconStyle } from '@/style/style';
+import { BASE_URL } from '@/utils/const';
 
 function Cover() {
   const {
@@ -93,7 +94,7 @@ function Cover() {
       <SelectedImageGrid item>
         {selectedImage && (
           <Image
-            src={`images/${selectedImage?.src}`}
+            src={`${BASE_URL}/photos/${selectedImage?.src}`}
             alt="Selected Image"
             width={220}
             height={330}
@@ -117,7 +118,7 @@ function Cover() {
             />
             <SelectImageBox onClick={() => selectImage(img)}>
               <CoverImage
-                src={`/images/${img.src}`}
+                src={`${BASE_URL}/photos/${img.src}`}
                 alt="Cover Image"
                 width={90}
                 height={160}
