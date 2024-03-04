@@ -39,4 +39,6 @@ next-env.d.ts
 /dev_utils
 /dev_utils/
 /crosspost_build
-/public/images/
+/server_store/node_modules
+/.github/
+/public/photos
