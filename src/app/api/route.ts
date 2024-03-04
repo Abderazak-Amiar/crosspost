@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export const GET = async (request: NextRequest) => {
-  return NextResponse.json(
-    { messgae: 'Welcome To CrossPost Api' },
-    { status: 200 },
-  );
+  const welcome = 'Welcome to the API ⚡️';
+  return NextResponse.json({ welcome }, { status: 200 });
 };
