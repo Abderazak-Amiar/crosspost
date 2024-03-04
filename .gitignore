@@ -41,4 +41,4 @@ next-env.d.ts
 /crosspost_build
 /server_store/node_modules
 /.github/
-/public/photos
+/public/photos/*
