@@ -12,7 +12,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({ success: false });
   }
   const buffer = await fileToBuffer(file);
-  const path = join('public/', 'images', file.name);
+  const path = join('public/', 'photos', file.name);
 
   await addImage({ src: file.name });
   writeFileSync(path, buffer);
@@ -37,5 +37,4 @@ export const DELETE = async (request: NextRequest) => {
   const res = await deleteImage(data.id);
   return NextResponse.json({ res });
 };
-
 export const dynamic = 'force-static';
