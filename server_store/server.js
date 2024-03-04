@@ -10,3 +10,6 @@ app.listen(3001, function (req, res) {
 app.route('/').get((req, res) => {
   res.send('Welcome to Server Store ⚡️');
 });
+app.route('/photos').get((req, res) => {
+  res.send('Welcome to photos route on Server Store ⚡️');
+});
