@@ -23,7 +23,7 @@ function SideMenu() {
         <GridMenuContainer container>
           <Grid item md={6}>
             {menu_items.map((item, index) => (
-              <SideMenuItem key={`item_${index}`} item={item} />
+              <SideMenuItem key={item.link} item={item} />
             ))}
           </Grid>
         </GridMenuContainer>
@@ -31,7 +31,9 @@ function SideMenu() {
       <Grid item>
         <GridMenuContainer container>
           <Grid item md={6}>
-            <SideMenuItem item={{ icon: 'settings', text: 'Settings' }} />
+            <SideMenuItem
+              item={{ icon: 'settings', text: 'Settings', link: 'settings' }}
+            />
           </Grid>
         </GridMenuContainer>
       </Grid>

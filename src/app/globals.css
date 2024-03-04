@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.TLeftTRightBR {
+  border-radius: 8px 0 0 8px;
+}
+.BLeftBRightBR {
+  border-radius: 0 8px 8px 0;
+}
+.layerBoxBR {
+  border-radius: 8px;
+}
