@@ -14,7 +14,7 @@ function SideMenu() {
       <Grid item>
         <GridMenuContainer container>
           <GridSideMenuLogo item md={6}>
-            <Image src="images/logo.svg" width={43} height={43} alt="Logo" />
+            <Image src="/logo.svg" width={43} height={43} alt="Logo" />
             <TypographyPoppins variant="h4">crosspost</TypographyPoppins>
           </GridSideMenuLogo>
         </GridMenuContainer>
