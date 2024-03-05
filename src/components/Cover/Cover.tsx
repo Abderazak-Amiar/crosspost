@@ -45,7 +45,6 @@ function Cover() {
   const upload = (e: SyntheticEvent) => {
     setTakePhoto(true);
     const element = document.getElementById('home_page');
-    console.log('==>element', element);
     element && setAnchorEl(element);
   };
 
