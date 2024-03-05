@@ -2,7 +2,7 @@ const express = require('express');
 const { join } = require('path');
 const app = express();
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('../public'));
 
 app.listen(3001, function (req, res) {
   console.log('Server started ⚡️ on port 3001');
@@ -12,8 +12,4 @@ app.route('/').get((req, res) => {
 });
 app.route('/photos').get((req, res) => {
   res.send('Welcome to photos route on Server Store ⚡️');
-});
-
-app.route('/prisma').get((req, res) => {
-  res.send('Welcome to Prisma DB UI ⚡️');
 });
